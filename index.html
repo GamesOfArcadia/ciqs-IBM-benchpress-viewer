@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMES OF ARCADIA - PDF Viewer</title>
+    <style>
+        html, body {
+            margin: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* PDF viewer fills space above footer */
+        #pdfViewer {
+            flex: 1;
+            width: 100%;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            height: 2cm;
+            min-height: 50px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1em;
+            box-sizing: border-box;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Left section: logo + title */
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        /* Logo */
+        .logo {
+            width: 1cm;
+            height: 1cm;
+            min-width: 40px;
+            min-height: 40px;
+            background: black;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .footer-left span {
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        /* Center: navigation */
+        .footer-center button {
+            margin: 0 0.5em;
+            padding: 0.4em 0.8em;
+            font-size: 0.9em;
+            cursor: pointer;
+            width: 110px;
+            text-align: center;
+        }
+
+        /* Right section: copyright */
+        .footer-right {
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- PDF Viewer -->
+    <iframe id="pdfViewer" src="1 - A Causal Iteration Framework.pdf"></iframe>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-left">
+            <a href="https://www.instagram.com/gamesofarcadia/" target="_blank" class="logo">GoA</a>
+            <span id="pdfTitle">GAMES OF ARCADIA | A Causal Iteration Framework</span>
+        </div>
+
+        <div class="footer-center">
+            <button onclick="prevPDF()">Previous</button>
+            <button onclick="nextPDF()">Next</button>
+        </div>
+
+        <div class="footer-right">
+            © 2026 GAMES OF ARCADIA - ALL RIGHTS RESERVED
+        </div>
+    </footer>
+
+    <script>
+  // List of PDFs and their titles
+  const pdfs = [
+    { file: "1 - A Causal Iteration Framework.pdf", title: "A Causal Iteration Framework" },
+    { file: "2 - A Timeless Reformulation of General Relativity.pdf", title: "A Timeless Reformulation of General Relativity" }
+  ];
+
+  let currentIndex = 0;
+  const viewer = document.getElementById('pdfViewer');
+  const titleSpan = document.getElementById('pdfTitle');
+
+  function loadPDF(index) {
+    currentIndex = index;
+    viewer.src = pdfs[index].file;
+    titleSpan.textContent = pdfs[index].title;
+  }
+
+  function nextPDF() {
+    let nextIndex = (currentIndex + 1) % pdfs.length;
+    loadPDF(nextIndex);
+  }
+
+  function prevPDF() {
+    let prevIndex = (currentIndex - 1 + pdfs.length) % pdfs.length;
+    loadPDF(prevIndex);
+  }
+    </script>
+
+</body>
+</html>
