@@ -1,12 +1,13 @@
 # causal-iteration-framework
-A new framework reformulating General Relativity without time dimension, presenting a fully causal approach to black holes, Hawking radiation, and cosmology. Testable predictions included, with a companion equations paper.
+A new framework reformulating General Relativity without time dimension, presenting a fully causal approach to black holes, Hawking radiation, and cosmology. 
+Testable predictions included, with a companion equations paper.
 
 This repository contains:
 
 - 1 - A Causal Iteration Framework.pdf (critical argument)
 - 2 - A Timeless Reformulation of General Relativity.pdf (equations)
 
-**DOI / Official Timestamp:** [Zenodo link here]
+**DOI / Official Timestamp:** 10.5281/zenodo.18750723
 
 ## Abstract
 
@@ -27,4 +28,4 @@ The constructive derivation, including the field equations, geodesics, black hol
 
 ## How to cite
 
-Jessy Pensédent, "Causal Iteration Framework: A timeless Reformulation of General Relativity", 2026. DOI: [Zenodo link here]
+Jessy Pensédent, "Causal Iteration Framework: A timeless Reformulation of General Relativity", 2026. DOI: 10.5281/zenodo.18750723
